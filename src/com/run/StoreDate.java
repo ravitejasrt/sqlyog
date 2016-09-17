@@ -18,8 +18,12 @@ public class StoreDate {
       Query qur=session.createQuery(query);
       List list=qur.list();
       System.out.println("list  = "+list);
-      for(int i=0;i<list.size();i++){
+/*      for(int i=0;i<list.size();i++){
     	 System.out.println(list.get(i)); 
-      }
+      }*/
+      System.out.println("---------------------stored procedures------------------------");
+      Query quepro=session.createSQLQuery("CALL actor_pro_srt()").addEntity(Actor.class);
+      List listproc=quepro.list();
+      System.out.println("listproc  = "+listproc);
 	}
 }
